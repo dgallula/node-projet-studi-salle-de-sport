@@ -1,4 +1,11 @@
 const express = require('express');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/sportCenter', {
+    useNewUrlParser: true,
+    useUnifiedTopology:true,
+});
+
 const userRoute = require('./routes/user');
 
  
@@ -11,7 +18,7 @@ app.use(express.json());
 userRoute(app)
 
 
-app.listen(5000, ()=> {
+app.listen(3000, ()=> {
 console.log('serveur succesfully launched')
 })
 
